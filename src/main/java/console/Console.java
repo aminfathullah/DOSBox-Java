@@ -36,9 +36,13 @@ public class Console {
             
 
 		while(line.trim().compareToIgnoreCase("exit") != 0) {
-                    if(!line.contains(" ")) {
-                        System.out.println(line.contains("exit"));
-                        
+                    if(line.contains("exit")){
+                        if(line.contains(" ")) {
+                            System.out.println("ada spasi");
+                        } else {
+                            System.out.println("ga ada spasi");
+                        }                        
+                    }
 			int readChar = 0;
 			StringBuilder input = new StringBuilder();
 
@@ -56,7 +60,7 @@ public class Console {
 			
 			this.outputter.resetStatistics();
 			invoker.executeCommand(line, this.outputter);                        
-                    }
+                    
 		}
 //                while(line.contains(" ")) {
                     this.outputter.printLine("\nGoodbye!");
