@@ -10,6 +10,7 @@ import interfaces.IDrive;
 import interfaces.IOutputter;
 import command.framework.Command;
 import filesystem.Directory;
+import java.sql.Timestamp;
 
 class CmdMkDir extends Command {
     private static final String PARAMETER_CONTAINS_BACKLASH = "At least one parameter denotes a path rather than a directory name.";
@@ -56,5 +57,7 @@ class CmdMkDir extends Command {
     private static void CreateDirectory(String newDirectoryName, IDrive drive) {
         Directory newDirectory = new Directory(newDirectoryName);
         drive.getCurrentDirectory().add(newDirectory);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println("Folder has been created at :"+timestamp);
     }
 }

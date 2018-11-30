@@ -9,6 +9,7 @@ import interfaces.IDrive;
 import interfaces.IOutputter;
 import command.framework.Command;
 import filesystem.File;
+import java.sql.Timestamp;
 
 class CmdMkFile extends Command {
 
@@ -27,5 +28,7 @@ class CmdMkFile extends Command {
         } 
         File newFile = new File(fileName, fileContent);
         this.getDrive().getCurrentDirectory().add(newFile);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println("File has been created at :"+timestamp);        
     }
 }
