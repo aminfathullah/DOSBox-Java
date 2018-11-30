@@ -25,10 +25,10 @@ class CmdMkFile extends Command {
             
         System.out.println(this.getParameterCount());
             fileContent = this.getParameterAt(1);
-        } 
-        File newFile = new File(fileName, fileContent);
-        this.getDrive().getCurrentDirectory().add(newFile);
+        }         
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        File newFile = new File(fileName, fileContent, timestamp);
+        this.getDrive().getCurrentDirectory().add(newFile);
         System.out.println("File has been created at :"+timestamp);        
     }
 }

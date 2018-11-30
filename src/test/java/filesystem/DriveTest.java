@@ -37,7 +37,7 @@ public class DriveTest extends FileSystemTestCase {
 	public void testCurrentDirectory() {
 		TestCase.assertTrue(this.drive.getCurrentDirectory().getName().compareTo("C:") == 0);
 		
-		Directory subDir = new Directory("subDir");
+		Directory subDir = new Directory("subDir", null);
 		this.drive.getRootDirectory().add(subDir);
 		this.drive.changeCurrentDirectory(subDir);
 		TestCase.assertSame(this.drive.getCurrentDirectory(), subDir);
@@ -74,7 +74,7 @@ public class DriveTest extends FileSystemTestCase {
 	@Test
 	public void testGetItemFromPathWithRelativePaths() {
 		String subSubDirName = new String("SubSubDir1");
-		Directory subSubDir1 = new Directory(subSubDirName);
+		Directory subSubDir1 = new Directory(subSubDirName, null);
 		this.subDir1.add(subSubDir1);
 		
 		this.drive.changeCurrentDirectory(this.subDir1);
@@ -118,7 +118,7 @@ public class DriveTest extends FileSystemTestCase {
 	public void testSingleCharacterDirectories() {
 		TestCase.assertTrue(rootDir.getNumberOfContainedDirectories() == 2);
 
-		Directory newDir = new Directory("N");
+		Directory newDir = new Directory("N", null);
 		this.rootDir.add(newDir);
 		TestCase.assertTrue(rootDir.getNumberOfContainedDirectories() == 3);
 

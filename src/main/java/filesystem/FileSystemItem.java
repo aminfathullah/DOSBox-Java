@@ -6,6 +6,7 @@
 
 package filesystem;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**This class abstracts File and Directory.
@@ -30,13 +31,15 @@ public abstract class FileSystemItem {
 	private String name;
 	private Directory parent;
 	private static final String ILLEGAL_ARGUMENT_TEXT = "Error: A file or directory name may not contain '/', '\', ',', ' ' or ':'";
-	
-	protected FileSystemItem(String name, Directory parent) throws IllegalArgumentException {
+	private Timestamp timestamp;
+        
+	protected FileSystemItem(String name, Directory parent, Timestamp timestamp) throws IllegalArgumentException {
 		if(checkName(name) == false) {
 			throw new IllegalArgumentException(name + " - " + ILLEGAL_ARGUMENT_TEXT);
 		}
 		this.name = name;
 		this.parent = parent;
+                this.timestamp = timestamp;
 	}
 
 	/**Returns the name of the file system item.
@@ -44,6 +47,10 @@ public abstract class FileSystemItem {
 	 */
 	public String getName() {
 		return this.name;
+	}
+        
+        public Timestamp getTimeStamp() {
+		return this.timestamp;
 	}
 	
 	/**Sets the name of the item.

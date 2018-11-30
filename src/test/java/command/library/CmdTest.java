@@ -43,19 +43,19 @@ public abstract class CmdTest {
 	protected void createTestFileStructure() {
 		this.drive = new Drive("C");
 		this.rootDir = this.drive.getRootDirectory();
-		this.fileInRoot1 = new File("FileInRoot1", "an entry");
+		this.fileInRoot1 = new File("FileInRoot1", "an entry", null);
 		this.rootDir.add(this.fileInRoot1);
-		this.fileInRoot2 = new File("FileInRoot2", "a long entry in a file");
+		this.fileInRoot2 = new File("FileInRoot2", "a long entry in a file", null);
 		this.rootDir.add(this.fileInRoot2);
 		
-		this.subDir1 = new Directory("subDir1");
+		this.subDir1 = new Directory("subDir1", null);
 		this.rootDir.add(subDir1);
-		this.file1InDir1 = new File("File1InDir1", "");
+		this.file1InDir1 = new File("File1InDir1", "", null);
 		this.subDir1.add(this.file1InDir1);
-		this.file2InDir1 = new File("File2InDir1", "");
+		this.file2InDir1 = new File("File2InDir1", "", null);
 		this.subDir1.add(this.file2InDir1);
 		
-		this.subDir2 = new Directory("subDir2");
+		this.subDir2 = new Directory("subDir2", null);
 		this.rootDir.add(subDir2);
 		
 		this.commandInvoker = new CommandInvoker();

@@ -34,7 +34,7 @@ public class Drive implements IDrive {
 		this.driveLetter = driveLetter.substring(0, 1);
 		this.driveLetter = this.driveLetter.toUpperCase();
 		this.label = new String("");
-		this.rootDir = new Directory(this.driveLetter + ":");
+		this.rootDir = new Directory(this.driveLetter + ":", null);
 		this.currentDir = this.rootDir;
 	}
 	

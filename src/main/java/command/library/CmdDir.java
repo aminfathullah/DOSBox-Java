@@ -76,8 +76,8 @@ class CmdDir extends Command {
             {
                 outputter.print("" + item.getSize());
             }
-
             outputter.print("\t" + item.getName());
+            outputter.print("\t" + item.getTimeStamp());
             outputter.newLine();
         }
     }

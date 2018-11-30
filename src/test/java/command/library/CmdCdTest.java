@@ -123,7 +123,7 @@ public class CmdCdTest extends CmdTest {
     public void cmdCd_WithSingleLetterDirectory_ChangesDirectory()
     {
         // given
-        Directory directoryWithSingleLetter = new Directory("a");
+        Directory directoryWithSingleLetter = new Directory("a", null);
         rootDir.add(directoryWithSingleLetter);
         drive.changeCurrentDirectory(rootDir);
 

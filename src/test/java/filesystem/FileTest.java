@@ -17,7 +17,7 @@ public class FileTest {
 
 	@Before
 	public void setUp() throws Exception {
-		testfile = new File("test", "test content");
+		testfile = new File("test", "test content", null);
 	}
 	
 	@Test
@@ -25,7 +25,7 @@ public class FileTest {
 		String name = "hello.txt";
 		String content = "This is the content";
 		
-		testfile = new File(name, content);
+		testfile = new File(name, content, null);
 		assertTrue(testfile.getName().compareTo(name) == 0);
 		assertTrue(testfile.getFileContent().compareTo(content) == 0);
 	}

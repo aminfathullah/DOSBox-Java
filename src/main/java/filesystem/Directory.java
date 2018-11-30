@@ -6,6 +6,7 @@
 
 package filesystem;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**This class implements the behavior of concrete directories.
@@ -22,10 +23,12 @@ import java.util.ArrayList;
 public class Directory extends FileSystemItem {
 
 	private ArrayList<FileSystemItem> content;
+        private Timestamp timestamp;
 
-	public Directory(String name) {
-		super(name, null);
+	public Directory(String name, Timestamp timestamp) {
+		super(name, null, timestamp);
 		this.content = new ArrayList<FileSystemItem>();
+                this.timestamp = timestamp;
 	}
 
 	@Override

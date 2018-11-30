@@ -55,9 +55,9 @@ class CmdMkDir extends Command {
     }
 
     private static void CreateDirectory(String newDirectoryName, IDrive drive) {
-        Directory newDirectory = new Directory(newDirectoryName);
-        drive.getCurrentDirectory().add(newDirectory);
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        Directory newDirectory = new Directory(newDirectoryName, timestamp);
+        drive.getCurrentDirectory().add(newDirectory);
         System.out.println("Folder has been created at :"+timestamp);
     }
 }

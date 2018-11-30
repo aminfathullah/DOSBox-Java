@@ -21,21 +21,21 @@ public class DirectoryTest {
     @Before
     public void setUp()
     {
-        this.rootDir = new Directory("root");
-        this.subDir1 = new Directory("subDir1");
+        this.rootDir = new Directory("root", null);
+        this.subDir1 = new Directory("subDir1", null);
         rootDir.add(this.subDir1);
-        this.subDir2 = new Directory("subDir2");
+        this.subDir2 = new Directory("subDir2", null);
         rootDir.add(this.subDir2);
-        this.file1InSubDir1 = new File("file1InSubDir1", "content1");
+        this.file1InSubDir1 = new File("file1InSubDir1", "content1", null);
         subDir1.add(this.file1InSubDir1);
-        this.file2InSubDir1 = new File("file2InSubDir1", "content2");
+        this.file2InSubDir1 = new File("file2InSubDir1", "content2", null);
         subDir1.add(this.file2InSubDir1);
     }
 
     @Test
     public void constructor_CreateWithName_IsCorrectlyCreated() {
         String testname = "root";
-        Directory testdir = new Directory(testname);
+        Directory testdir = new Directory(testname, null);
         assertEquals(testname, testdir.getName());
         assertEquals(0, testdir.getNumberOfContainedDirectories());
         assertEquals(0, testdir.getNumberOfContainedFiles());

@@ -6,6 +6,7 @@
 
 package filesystem;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**This class implements the behavior of concrete files. 
@@ -17,19 +18,25 @@ import java.util.ArrayList;
  */
 public class File extends FileSystemItem {
 	private String fileContent;
+        private Timestamp timestamp;
 
 	/**Constructor.
 	 * @param name A name for the file. Note that file names may not contain '\' '/' ':' ',' ';' and ' '.
 	 * @param fileContent Any string which represents the content of the file.
 	 *                    The content may not contain characters like ',' and ';'.
 	 */
-	public File(String name, String fileContent) {
-		super(name, null);
+	public File(String name, String fileContent, Timestamp timestamp) {
+		super(name, null, timestamp);
 		this.fileContent = fileContent;
+                this.timestamp = timestamp;
 	}
 
 	public String getFileContent() {
 		return this.fileContent;
+	}
+        
+        public Timestamp getTimeStamp() {
+		return this.timestamp;
 	}
 
 	@Override
