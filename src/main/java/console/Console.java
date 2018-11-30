@@ -38,9 +38,7 @@ public class Console {
 		while(line.trim().compareToIgnoreCase("exit") != 0) {
                     if(line.contains("exit")){
                         if(line.contains(" ")) {
-                            System.out.println("ada spasi");
-                        } else {
-                            System.out.println("ga ada spasi");
+                            break;
                         }                        
                     }
 			int readChar = 0;
